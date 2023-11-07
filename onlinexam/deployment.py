@@ -4,7 +4,7 @@ from .settings import BASE_DIR
 
 
 SECRET_KEY = os.environ['SECRET']
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
+ALLOWED_HOSTS = ['plm-app.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
 
