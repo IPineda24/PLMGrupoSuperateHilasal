@@ -24,15 +24,21 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-conn_str = os.environ['AZURE_SQL_CONNECTIONSTRING']
-conn_str_params = {pair.split('=')[0]: pair.split('=')[1] for pair in conn_str.split(' ')}
+conn_str = os.environ.get('AZURE_SQL_CONNECTIONSTRING')
+
+# Si la cadena de conexión no está disponible, usa valores predeterminados
+if not conn_str:
+    conn_str = 'cadena_de_conexión_predeterminada'
+
+# Divide la cadena de conexión en sus componentes
+conn_str_params = {pair.split('=')[0]: pair.split('=')[1] for pair in conn_str.split(';')}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlserver',
-        'NAME': conn_str_params['dbname'],
-        'HOST': conn_str_params['host'],
-        'USER': conn_str_params['user'],
-        'PASSWORD': conn_str_params['password'],
+        'NAME': conn_str_params['Database'],
+        'HOST': conn_str_params['Server'],
+        'USER': conn_str_params['Uid'],
+        'PASSWORD': conn_str_params['Pwd'],
     }
 }
-
