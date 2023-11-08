@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (str(BASE_DIR.joinpath('azure_content/static')),)
+STATICFILES_DIRS = (str(BASE_DIR.joinpath('/static')),)
 
 LOGIN_REDIRECT_URL='/afterlogin'
 
