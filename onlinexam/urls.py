@@ -3,7 +3,7 @@ from django.contrib import admin
 from exam import views
 from django.contrib.auth.views import LogoutView,LoginView
 urlpatterns = [
-   
+
     path('admin/', admin.site.urls),
     path('teacher/',include('teacher.urls')),
     path('student/',include('student.urls')),
