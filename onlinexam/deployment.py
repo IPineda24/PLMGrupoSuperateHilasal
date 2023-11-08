@@ -31,7 +31,7 @@ if not conn_str:
     conn_str = 'cadena_de_conexión_predeterminada'
 
 # Divide la cadena de conexión en sus componentes
-conn_str_params = {pair.split('=')[0]: pair.split('=')[1] for pair in conn_str.split(' ')}
+conn_str_params = {pair.split('=')[0]: pair.split('=')[1] for pair in conn_str.split(' ') if '=' in pair}
 
 DATABASES = {
     'default': {
