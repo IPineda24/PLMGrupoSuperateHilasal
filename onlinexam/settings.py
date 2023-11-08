@@ -25,8 +25,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 SECRET_KEY = os.environ['SECRET']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
+
 
 
 # Application definition
@@ -127,7 +128,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[
 STATIC_DIR,
-]
+ ]
 
 LOGIN_REDIRECT_URL='/afterlogin'
 
