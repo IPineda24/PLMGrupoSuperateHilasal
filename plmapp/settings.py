@@ -25,7 +25,7 @@ SECRET_KEY = '$ar=n_v_6q2&g49+d5g*y!ez+(h7u4z%%o06vma6hvx#e9#0f^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['plm-app.azurewebsites.net']
 
 
 # Application definition
